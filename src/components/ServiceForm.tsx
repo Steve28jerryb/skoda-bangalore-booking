@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -18,6 +17,7 @@ interface ServiceFormProps {
 export const ServiceForm = ({ selectedCar, appointmentData, onBack }: ServiceFormProps) => {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [bookingId, setBookingId] = useState("");
   const [formData, setFormData] = useState({
     customerName: "",
     email: "",
@@ -36,6 +36,13 @@ export const ServiceForm = ({ selectedCar, appointmentData, onBack }: ServiceFor
     { id: "battery", label: "Battery Check", description: "Battery health & replacement", price: "₹1,500" },
     { id: "wheel", label: "Wheel Alignment", description: "Wheel balancing & alignment", price: "₹2,000" }
   ];
+
+  const generateBookingId = () => {
+    const prefix = "SKODA";
+    const timestamp = Date.now().toString().slice(-6);
+    const random = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+    return `${prefix}${timestamp}${random}`;
+  };
 
   const handleServiceTypeChange = (serviceId: string, checked: boolean) => {
     setFormData(prev => ({
@@ -58,11 +65,15 @@ export const ServiceForm = ({ selectedCar, appointmentData, onBack }: ServiceFor
       return;
     }
 
+    // Generate booking ID
+    const newBookingId = generateBookingId();
+    setBookingId(newBookingId);
+    
     // Simulate booking confirmation
     setIsSubmitted(true);
     toast({
       title: "Appointment Booked Successfully!",
-      description: `Your ŠKODA service appointment has been confirmed for ${appointmentData.formattedDate} at ${appointmentData.time}.`,
+      description: `Your ŠKODA service appointment has been confirmed for ${appointmentData.formattedDate} at ${appointmentData.time}. Booking ID: ${newBookingId}`,
     });
   };
 
@@ -77,6 +88,13 @@ export const ServiceForm = ({ selectedCar, appointmentData, onBack }: ServiceFor
           </div>
           
           <div className="bg-green-50 p-6 rounded-lg mb-6">
+            <div className="mb-4">
+              <div className="text-2xl font-bold text-green-600 mb-2">
+                Booking ID: {bookingId}
+              </div>
+              <p className="text-sm text-gray-600">Please save this booking ID for your records</p>
+            </div>
+            
             <h3 className="font-semibold mb-4">Appointment Details</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
               <div><strong>Customer:</strong> {formData.customerName}</div>

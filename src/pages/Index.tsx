@@ -24,8 +24,10 @@ const Index = () => {
       <header className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">ŠKODA</span>
+            <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center border">
+              <svg viewBox="0 0 120 120" className="w-12 h-12">
+                <text x="60" y="70" textAnchor="middle" className="fill-green-600 text-2xl font-bold">ŠKODA</text>
+              </svg>
             </div>
             <div>
               <h1 className="text-2xl font-bold text-gray-900">ŠKODA Service Center</h1>

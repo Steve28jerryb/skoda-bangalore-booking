@@ -15,7 +15,7 @@ export const CarSelection = ({ selectedCar, onCarSelect, onNext }: CarSelectionP
       name: "ŠKODA Octavia",
       variant: "1.5 TSI & 2.0 TSI",
       price: "₹26.29 - ₹37.99 Lakh",
-      image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=400&h=250&fit=crop",
+      image: "/lovable-uploads/f58c2523-5446-4018-a3d1-efacedb48506.png",
       features: ["Sedan", "Petrol", "Manual/Automatic"]
     },
     {
@@ -23,7 +23,7 @@ export const CarSelection = ({ selectedCar, onCarSelect, onNext }: CarSelectionP
       name: "ŠKODA Superb",
       variant: "2.0 TSI",
       price: "₹36.29 - ₹39.99 Lakh",
-      image: "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=400&h=250&fit=crop",
+      image: "/lovable-uploads/f58c2523-5446-4018-a3d1-efacedb48506.png",
       features: ["Sedan", "Petrol", "Automatic"]
     },
     {
@@ -31,7 +31,7 @@ export const CarSelection = ({ selectedCar, onCarSelect, onNext }: CarSelectionP
       name: "ŠKODA Kodiaq",
       variant: "2.0 TSI",
       price: "₹39.99 - ₹42.99 Lakh",
-      image: "https://images.unsplash.com/photo-1544829099-b9a0c5303bea?w=400&h=250&fit=crop",
+      image: "/lovable-uploads/a8ccfc03-fe27-4628-a2fa-a96402a512c1.png",
       features: ["SUV", "Petrol", "Automatic", "7-Seater"]
     },
     {
@@ -39,7 +39,7 @@ export const CarSelection = ({ selectedCar, onCarSelect, onNext }: CarSelectionP
       name: "ŠKODA Kushaq",
       variant: "1.0 TSI & 1.5 TSI",
       price: "₹11.89 - ₹20.49 Lakh",
-      image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=400&h=250&fit=crop",
+      image: "/lovable-uploads/5f94cf38-e6ad-4b95-a34c-cad81a909a52.png",
       features: ["Compact SUV", "Petrol", "Manual/Automatic"]
     },
     {
@@ -47,7 +47,7 @@ export const CarSelection = ({ selectedCar, onCarSelect, onNext }: CarSelectionP
       name: "ŠKODA Slavia",
       variant: "1.0 TSI & 1.5 TSI",
       price: "₹11.69 - ₹19.49 Lakh",
-      image: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?w=400&h=250&fit=crop",
+      image: "/lovable-uploads/5f94cf38-e6ad-4b95-a34c-cad81a909a52.png",
       features: ["Sedan", "Petrol", "Manual/Automatic"]
     },
     {
@@ -55,7 +55,7 @@ export const CarSelection = ({ selectedCar, onCarSelect, onNext }: CarSelectionP
       name: "ŠKODA Karoq",
       variant: "1.5 TSI",
       price: "₹26.49 - ₹30.99 Lakh",
-      image: "https://images.unsplash.com/photo-1544829099-b9a0c5303bea?w=400&h=250&fit=crop",
+      image: "/lovable-uploads/a8ccfc03-fe27-4628-a2fa-a96402a512c1.png",
       features: ["Compact SUV", "Petrol", "Automatic"]
     }
   ];
@@ -82,7 +82,7 @@ export const CarSelection = ({ selectedCar, onCarSelect, onNext }: CarSelectionP
               <img
                 src={car.image}
                 alt={car.name}
-                className="w-full h-48 object-cover rounded-lg mb-3"
+                className="w-full h-48 object-cover rounded-lg mb-3 bg-white"
               />
               <CardTitle className="text-xl text-gray-900">{car.name}</CardTitle>
               <p className="text-sm text-gray-600">{car.variant}</p>
